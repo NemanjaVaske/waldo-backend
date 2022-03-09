@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :characters, only: [:index, :create]
+      resources :images do
+        resources :characters, only: [:index, :create]
+      end
     end
   end
   root "characters#index"

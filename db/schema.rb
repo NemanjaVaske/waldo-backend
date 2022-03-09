@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_092208) do
+ActiveRecord::Schema.define(version: 2022_03_09_092442) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2022_03_09_092208) do
     t.integer "y_pos"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "image_id"
+    t.index ["image_id"], name: "index_characters_on_image_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -27,4 +29,5 @@ ActiveRecord::Schema.define(version: 2022_03_09_092208) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "characters", "images"
 end
