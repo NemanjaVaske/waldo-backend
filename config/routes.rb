@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :images do
-        resources :characters, only: [:index, :create]
-      end
+      resources :images
     end
   end
-  root "characters#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
