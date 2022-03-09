@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :images do
         get '/scores' ,to: 'scores#show'
-        post '/scores' ,to: 'scores#create'
+        post '/scores/:name/:record' ,to: 'scores#create'
       end
     end
   end

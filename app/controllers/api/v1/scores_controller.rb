@@ -5,7 +5,7 @@ class Api::V1::ScoresController < ApplicationController
     end
     def create
         @image = Image.find(params[:image_id])
-        @score = @image.scores.build(params.permit(:name =>:name,:seconds =>:seconds))
+        @score = @image.scores.build(name: params[:name], seconds: params[:record])
         
         if @score.save
             render json: @image.scores
