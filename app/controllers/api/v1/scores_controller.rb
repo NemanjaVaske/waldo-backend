@@ -11,6 +11,7 @@ class Api::V1::ScoresController < ApplicationController
             render json: @image.scores
         else
             render json: @score.errors, status: :unprocessable_entity
+            
         end
     end
 end
