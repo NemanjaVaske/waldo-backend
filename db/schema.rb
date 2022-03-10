@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2022_03_09_160728) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "x_pos"
     t.integer "y_pos"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "image_id"
+    t.bigint "image_id"
     t.index ["image_id"], name: "index_characters_on_image_id"
   end
 
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_160728) do
   create_table "scores", force: :cascade do |t|
     t.string "name"
     t.integer "seconds"
-    t.integer "image_id", null: false
+    t.bigint "image_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["image_id"], name: "index_scores_on_image_id"
