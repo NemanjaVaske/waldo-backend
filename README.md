@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is backend api for game call Where's Waldo.
+It is project from odin full stack ruby on rails course.
+Backend is created with Rails and send data to waldo_frontend.
+https://quiet-fortress-06303.herokuapp.com
